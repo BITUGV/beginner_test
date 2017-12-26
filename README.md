@@ -1,7 +1,7 @@
 # beginner_test
 **一、安装Git**
 
-1. 在Linux上安装Git：
+1. 在 Ubuntu 上安装 Git：
 
 在终端中输入：
 
@@ -10,12 +10,6 @@ sudo apt-get install git
 ```
 
 键入用户密码即可
-
-2. 在Windows上安装Git:
-
-   在网盘中下载 [Git安装包](https://pan.baidu.com/s/1kU5OCOB#list/path=%2Fpub%2Fgit)
-
-然后按默认选项安装即可。
 
 **二、Git 配置**
 
@@ -36,7 +30,7 @@ git config --global user.email "email@example.com"
 1. 注册 GitHub 账号，访问 [GitHub](github.com) 官网进行注册
 2. 由于你的本地 Git 仓库和 GitHub 仓库之间的传输是通过 SSH 加密的，所以，需要一点设置：
 
-第 1 步：创建 SSH Key。在用户主目录下，看看有没有 .ssh 目录，如果有，再看看这个目录下有没有 id_rsa 和 id_rsa.pub 这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开 Shell（Windows下打开Git Bash），创建 SSH Key：
+第 1 步：创建 SSH Key。在用户主目录下，看看有没有 .ssh 目录，如果有，再看看这个目录下有没有 id_rsa 和 id_rsa.pub 这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开终端，创建 SSH Key：
 
 ```shell
 ssh-keygen -t rsa -C"youremail@example.com"
@@ -54,27 +48,44 @@ ssh-keygen -t rsa -C"youremail@example.com"
 
 点“Add Key”，你就应该看到已经添加的 Key
 
-四、联系管理员添加进 contributor
+**四、联系管理员添加进 contributor**
 
 ​	将GitHub账号发给陈泰然，添加进 contributor
-
-五、fork代码库
-
-添加 contributor 成功后，进入 [beginner_test库](https://github.com/BITUGV/BITFSAC) 进行测试，点击 Fork ，即可将代码库 clone 到自己的代码库，可以在自己的代码库自由修改代码。
-
-![](https://raw.githubusercontent.com/BITUGV/beginner_test/master/pic/fork.png)
-
-如需提交代码，则在页面中提出 Pull request
-
-![](https://raw.githubusercontent.com/BITUGV/beginner_test/master/pic/pr.png)
 
 **五、克隆远程库**
 
 现在，GitHub已经配置好了，下一步是用命令 git clone 克隆一个本地库：
 
+打开终端，用 cd 命令切换到一个方便的文件夹，之后输入：
+
 ```shell
-git clone git@github.com:Your Github Name/beginner_test.git
+git clone git@github.com:BITUGV/beginner_test.git
 ```
 
-具体 Git 命令教程查看网络上的 [教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
+**六、创建分支**
 
+GitHub 仓库默认有一个 master 的分支，当我们在 master 分支开发过程中有一个新的功能需求，我们就可以新建一个分支同步开发而互不影响，开发完成后，再合并 merge 到主分支 master 上。
+
+打开终端切换到本地仓库目录下，输入：
+
+```shell
+git checkout -b <name> (此处填写分支名字,例如 dev )
+```
+
+即可创建并切换到 dev 分支，或者：
+
+```shell
+git branch dev       //创建分支'dev'
+git checkout dev     //切换分支'dev'
+```
+
+其他常用命令：
+
+```shell
+git branch           //查看当前分支
+git merge dev        //将 'dev'分支合并到当前分支
+git branch -d dev    //删除'dev'分支
+git push origin dev  //提交'dev'分支的修改
+```
+
+**最后**：具体的 Git 命令教程请查看网络上的 [廖雪峰 Git 教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
