@@ -1,4 +1,20 @@
 # beginner_test
+## 目录
+
+<ul type="disc">
+<li><a href="#C1"> Git 安装及 GitHub 配置</a></li>
+<li>
+    <a href="#C2">自动化 Bash 脚本安装</a>
+    <ul>
+        <li><a href="#C2">基本依赖安装</a></li>
+        <li><a href="#C2">ROS安装</a></li>
+    </ul>
+</li>
+<li><a href="#C3">CLion IDE 安装</a></li>
+</ul> 
+
+<a name="C1"><h2> Git 安装及 GitHub 配置</h2></a>
+
 **一、安装Git**
 
 1. 在 Ubuntu 上安装 Git：
@@ -89,3 +105,38 @@ git push origin dev  //提交'dev'分支的修改
 ```
 
 **最后**：具体的 Git 命令教程请查看网络上的 [廖雪峰 Git 教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
+
+<a name="C2"><h2>自动化脚本安装</h2></a>
+
+打开终端，用 cd 命令切换到该代码库的文件夹中，执行bash文件
+
+```shell
+./install_dependencies.bash         //安装基本依赖
+./ros_install.bash                  //安装ROS
+```
+
+<a name="C3"><h2>CLion IDE 安装</h2></a>
+
+CLion 被广泛用于ROS_package的开发中，这里提供一个通过申请学生版的免费安装教程。
+
+登陆  [JetBrains官网](https://www.jetbrains.com/zh/student/)，点击立即申请，填写相关信息，邮箱填写edu邮箱，之后即可免费下载CLion。
+
+![](https://raw.githubusercontent.com/BITUGV/beginner_test/master/pic/register.png)
+
+安装完成后在 /usr/share/applications 中修改 jetbrains-clion.desktop 文件
+
+修改
+
+```shell
+Exec="/home/clion-2016.2/bin/clion.sh" %f
+```
+
+为
+
+```shell
+Exec=bash -i -c "/home/clion-2016.2/bin/clion.sh" %f
+```
+
+即添加 bash -i -c
+
+这样即可，编辑好源文件后。修改CMakeLists.txt，添加package依赖项，就可以进行编译了。
