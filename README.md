@@ -44,7 +44,14 @@ git config --global user.email "email@example.com"
 **三、GitHub 配置**
 
 1. 注册 GitHub 账号，访问 [GitHub](github.com) 官网进行注册
-2. 由于你的本地 Git 仓库和 GitHub 仓库之间的传输是通过 SSH 加密的，所以，需要一点设置：
+
+2. 验证edu邮箱（可选步骤），由于GitHub申请私有代码库需要付费，通过申请学生edu邮箱验证，可以获得免费资格。登陆GitHub账号，选中右上角头像，选择setting，进入email设置，添加edu的邮箱地址。
+
+   ![](https://raw.githubusercontent.com/BITUGV/beginner_test/master/pic/email.png)
+
+   之后打开[GitHub Education](https://education.github.com)链接，点击Get your pack，填写毕业年份，edu邮箱等信息，即可获得免费的私有仓库申请资格。
+
+3. 由于你的本地 Git 仓库和 GitHub 仓库之间的传输是通过 SSH 加密的，所以，需要一点设置：
 
 第 1 步：创建 SSH Key。在用户主目录下，看看有没有 .ssh 目录，如果有，再看看这个目录下有没有 id_rsa 和 id_rsa.pub 这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开终端，创建 SSH Key：
 
