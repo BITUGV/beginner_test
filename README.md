@@ -11,6 +11,7 @@
     </ul>
 </li>
 <li><a href="#C3">CLion IDE 安装</a></li>
+<li><a href="#C4">雷达的ros驱动安装</a></li>
 </ul> 
 
 <a name="C1"><h2> Git 安装及 GitHub 配置</h2></a>
@@ -147,3 +148,7 @@ Exec=bash -i -c "/home/clion-2016.2/bin/clion.sh" %f
 即添加 bash -i -c
 
 这样即可，编辑好源文件后。修改CMakeLists.txt，添加package依赖项，就可以进行编译了。
+
+<a name="C4"><h2>雷达的ros驱动安装</h2></a>
+
+访问 [禾赛雷达驱动GitHub](https://github.com/HesaiTechnology/HesaiLidar-ros) 进行安装
